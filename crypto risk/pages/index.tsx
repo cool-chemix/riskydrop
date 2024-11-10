@@ -41,16 +41,7 @@ const Home: NextPage = () => {
     !auction?.settled &&
     currTime > Number(auction?.end_time)) as boolean;
   const needStarting = (auction && (auction?.settled || currTime > Number(auction?.end_time))) as boolean;
-  // false
-  // index.tsx:46 30000000000000000n
-  // index.tsx:47 false
-  // index.tsx:48 true
-  // index.tsx:49 true
-  // console.log(auctionNeedsSettling)
-  // console.log(auction?.amount)
-  // console.log(!auction?.settled)
-  // console.log(currTime > Number(auction?.end_time))
-  // console.log(auction?.settled)
+
 
   useEffect(() => {
     if (auction && isClient && auction?.dropletId) {
@@ -158,7 +149,7 @@ const Home: NextPage = () => {
                   textAlign: "center",
                 }}
               >
-                A New Era for NFT Liquidity
+                A New Era for NFT Lending
               </div>
             </div>
             <div
@@ -173,15 +164,18 @@ const Home: NextPage = () => {
             >
               {dropletName}
               <br></br>
-              <div style={{ marginTop: "20px" }}>
+              <div style={{ 
+                  marginTop: "20px",
+                }}>
                 <img
-                  src={`/droplets/${isClient && auction?.dropletId}.png`}
+                  src="/droplet.jpg"
                   style={{
-                    zIndex: -1,
-                    width: (is4k && "1000px") || "30vw",
-                    height: (is4k && "1000px") || "30vw",
-                    clipPath: "circle(50%)"
-                  }}
+                  width: "30vw",
+                  height: "30vw",
+                  clipPath: "circle(50%)"
+                }}
+                onError={(e) => console.error("Image failed to load:", e)} // Add this
+                alt="Droplet" // Add this
                 />
               </div>
               <br></br>
@@ -210,11 +204,7 @@ const Home: NextPage = () => {
                   marginTop: "10px"
                 }}
               >
-                {auctionNeedsSettling && (
-                  <button onClick={settle} className={styles.bidBtn}>
-                    Settle
-                  </button>
-                )}
+   
                 {!auctionNeedsSettling && (
                   <button
                     style={{

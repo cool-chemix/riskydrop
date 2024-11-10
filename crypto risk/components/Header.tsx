@@ -40,33 +40,21 @@ export const Header = ({ page }) => {
                         alignItems: 'center',
                         paddingRight: "5px",
                         opacity: "1",
-                        width: "85%",
+                        width: "90%",
                     }}
                 >
                     <div
                         style={{
                             display: "flex",
                             justifyContent: "space-between",
-                            width: "80%",
+                            width: "90%",
                         }}
                     >
-                        <Link
-                            href="http://docs.droplet.wtf"
-                            target="_blank"
-                            style={{
-                                left: "3%",
-                                color: "white",
-                                fontFamily: "Omletta-Regular",
-                                fontSize: '2.5vw'
-                            }}
-                        >
-                            Docs
-                        </Link>
                         <Link
                             href="/"
                             style={{
                                 left: "3%",
-                                color: page === "" ? "aqua" : "white",
+                                color: page === "" ? "aqua" : "black",
                                 fontFamily: "Omletta-Regular",
                                 fontSize: '2.5vw'
                             }}
@@ -76,43 +64,28 @@ export const Header = ({ page }) => {
                         <Link
                             href="/faucet"
                             style={{
-                                color: page === "faucet" ? "aqua" : "white",
+                                color: page === "faucet" ? "aqua" : "black",
                                 fontFamily: "Omletta-Regular",
                                 fontSize: '2.5vw'
                             }}
                         >
                             Faucet
                         </Link>
-                        {/* <Link
-              href="/bonding"
-              style={{
-                color: page === "bonding" ? "aqua" : "white",
-                fontFamily: "Omletta-Regular",
-                fontSize:
-                  (isTabletAndBelow && "3.0vh") ||
-                  (isLaptopAndBelow && "3.5vh") ||
-                  "4.5vh",
-              }}
-            >
-              Bonding
-            </Link> */}
                         <Link
-                            href="#"
+                            href="/risk"
                             style={{
-                                color: page === "bonding" ? "aqua" : "white",
+                                color: page === "risk" ? "aqua" : "black",
                                 fontFamily: "Omletta-Regular",
                                 fontSize: '2.5vw'
                             }}
                         >
-                            <div className="tooltip">Bonding
-                                <span className="tooltiptext">Bonding will launch with the DAO!</span>
-                            </div>
+                            Risk
                         </Link>
                         <Link
                             href="/governance"
                             style={{
                                 marginRight: "7vw",
-                                color: page === "governance" ? "aqua" : "white",
+                                color: page === "governance" ? "aqua" : "black",
                                 fontFamily: "Omletta-Regular",
                                 fontSize: '2.5vw'
                             }}
